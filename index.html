@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Oceanus Visual Analytics Dashboard</title>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f6f8; text-align: center; margin: 0; }
+  h2 { margin: 18px 0 8px; }
+  .tab { overflow: hidden; background: #e1e5ea; border-bottom: 2px solid #ccc; display: inline-block; margin: 0 auto; }
+  .tab button {
+    background-color: inherit; border: none; outline: none;
+    padding: 12px 18px; cursor: pointer; font-size: 16px; transition: 0.2s;
+  }
+  .tab button:hover { background-color: #ddd; }
+  .tab button.active { background-color: #ccc; }
+  .wrap { display: flex; justify-content: center; }
+  .tabcontent { display: none; padding: 10px 0 20px; }
+  svg { border: 1px solid #ccc; background: #fff; margin-top: 10px; }
+  .legend { margin: 8px 0 18px; }
+  .legend span { margin: 6px; padding: 6px 10px; border-radius: 4px; color: white; display: inline-block; }
+  .footer { color:#777; font-size: 12px; margin: 10px 0 20px; }
+</style>
+</head>
+
+<body>
+<h2>🌊 Oceanus Visual Analytics Dashboard</h2>
+
+<div class="wrap">
+  <div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'Temporal')" id="defaultOpen">Temporal Patterns</button>
+    <button class="tablinks" onclick="openTab(event, 'PeopleVessel')">People–Vessel Network</button>
+    <button class="tablinks" onclick="openTab(event, 'Pseudonym')">Pseudonym Network</button>
+    <button class="tablinks" onclick="openTab(event, 'Nadia')">Nadia Conti Network</button>
+  </div>
+</div>
+
+<div class="legend">
+  <span style="background:#7eb0d5">Person</span>
+  <span style="background:#90d595">Vessel</span>
+  <span style="background:#fdb462">Organization/Group</span>
+  <span style="background:#e78ac3">Location</span>
+  <span style="background:#b0b0b0">Event/Other</span>
+  <span style="background:#ff595e">Nadia Conti</span>
+</div>
+
+<div id="Temporal" class="tabcontent">
+  <svg id="svg1" width="1000" height="650"></svg>
+</div>
+
+<div id="PeopleVessel" class="tabcontent">
+  <svg id="svg2" width="1000" height="650"></svg>
+</div>
+
+<div id="Pseudonym" class="tabcontent">
+  <svg id="svg3" width="1000" height="650"></svg>
+</div>
+
+<div id="Nadia" class="tabcontent">
+  <svg id="svg4" width="1000" height="650"></svg>
+</div>
+
+<div class="footer">Drag nodes to explore; labels resize automatically for events.</div>
+
+<script>
+// --- Tabs ---
+function openTab(evt, name) {
+  const tabs = document.getElementsByClassName("tabcontent");
+  for (let i=0; i<tabs.length; i++) tabs[i].style.display = "none";
+  const links = document.getElementsByClassName("tablinks");
+  for (let i=0; i<links.length; i++) links[i].className = links[i].className.replace(" active", "");
+  document.getElementById(name).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+document.getElementById("defaultOpen").click();
+
+// --- Generic Force Graph ---
+function drawGraph(svgSelector, jsonPath, highlight=null) {
+  const svg = d3.select(svgSelector);
+  const width = +svg.attr("width"), height = +svg.attr("height");
+  svg.selectAll("*").remove();
+
+  const g = svg.append("g"); // for zoom/pan
+
+  const zoom = d3.zoom().scaleExtent([0.3, 4]).on("zoom", (event) => g.attr("transform", event.transform));
+  svg.call(zoom);
+
+  d3.json(jsonPath).then(data => {
+    // Ensure nodes have a 'type' (temporal Hour nodes may not)
+    data.nodes.forEach(n => { if (!n.type && /^Hour /.test(n.id)) n.type = "Hour"; });
+
+    const color = d => {
+      if (highlight && d.id === highlight) return "#ff595e";
+      if (d.type === "Person") return "#7eb0d5";
+      if (d.type === "Vessel") return "#90d595";
+      if (d.type === "Organization" || d.type === "Group") return "#fdb462";
+      if (d.type === "Location") return "#e78ac3";
+      if (d.type === "Hour") return "#8da0cb";
+      return "#b0b0b0"; // Event/Other
+    };
+
+    const link = g.append("g").attr("stroke", "#aaa").selectAll("line")
+      .data(data.links).join("line")
+      .attr("stroke-width", d => d.value ? Math.max(1, d.value*6) : 1);
+
+    const node = g.append("g").selectAll("circle")
+      .data(data.nodes).join("circle")
+      .attr("r", 6.5)
+      .attr("fill", color)
+      .call(drag(simulation()));
+
+    const label = g.append("g").selectAll("text")
+      .data(data.nodes).join("text")
+      .text(d => d.id)
+      .attr("font-size", d => (d.type === "Event" ? 9 : 11))
+      .attr("dx", 10)
+      .attr("dy", ".35em");
+
+    const sim = simulation();
+    sim.nodes(data.nodes).on("tick", ticked);
+    sim.force("link").links(data.links);
+
+    function simulation() {
+      return d3.forceSimulation()
+        .force("link", d3.forceLink().id(d => d.id).distance(120))
+        .force("charge", d3.forceManyBody().strength(-260))
+        .force("center", d3.forceCenter(width/2, height/2));
+    }
+
+    function ticked() {
+      link.attr("x1", d => d.source.x).attr("y1", d => d.source.y)
+          .attr("x2", d => d.target.x).attr("y2", d => d.target.y);
+      node.attr("cx", d => d.x).attr("cy", d => d.y);
+      label.attr("x", d => d.x).attr("y", d => d.y);
+    }
+
+    function drag(sim) {
+      return d3.drag()
+        .on("start", (event) => {
+          if (!event.active) sim.alphaTarget(0.3).restart();
+          event.subject.fx = event.subject.x; event.subject.fy = event.subject.y;
+        })
+        .on("drag", (event) => {
+          event.subject.fx = event.x; event.subject.fy = event.y;
+        })
+        .on("end", (event) => {
+          if (!event.active) sim.alphaTarget(0);
+          event.subject.fx = null; event.subject.fy = null;
+        });
+    }
+  });
+}
+
+// Draw all four tabs
+drawGraph("#svg1", "temporal_network.json");
+drawGraph("#svg2", "people_vessel_network.json");
+drawGraph("#svg3", "pseudonym_network.json");
+drawGraph("#svg4", "nadia_network.json", "Nadia Conti");
+</script>
+</body>
+</html>
