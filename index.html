@@ -3,8 +3,10 @@
 <head>
 <meta charset="utf-8" />
 <title>Oceanus Visual Analytics Dashboard</title>
+
 <script src="https://d3js.org/d3.v7.min.js"></script>
-<script src="script.js"></script>
+<script src="script.js" defer></script>
+<script src="nadia.js" defer></script>
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -39,11 +41,7 @@
 
 <div id="Pseudonym" class="tabcontent">
  <div style="display:flex; justify-content:center; align-items:flex-start; gap:20px; background:white; padding:20px; border:1px solid #ccc; width:1000px; margin:auto;">
-
-    <!-- Left: Graph -->
     <svg id="svg3" width="600" height="650" style="border:1px solid #ccc;"></svg>
-
-    <!-- Right: Table -->
     <div style="flex:1; overflow-y:auto; max-height:650px;">
       <h3 style="margin-top:0;">🔍 Pseudonym Similarity Table</h3>
       <table id="pseudonymTable" style="width:100%; border-collapse: collapse; background: white;">
@@ -73,198 +71,5 @@
 
 <div class="footer">Drag nodes to explore; labels resize automatically for events.</div>
 
-<!-- -----------SCRIPT----------- -->
-<script>
-// --- Tabs ---
-function openTab(evt, name) {
-  const tabs = document.getElementsByClassName("tabcontent");
-  for (let i=0; i<tabs.length; i++) tabs[i].style.display = "none";
-  const links = document.getElementsByClassName("tablinks");
-  for (let i=0; i<links.length; i++) links[i].className = links[i].className.replace(" active", "");
-  document.getElementById(name).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-document.getElementById("defaultOpen").click();
-
-// --- Generic Force Graph ---
-function drawGraph(svgSelector, jsonPath, highlight=null) {
-  const svg = d3.select(svgSelector);
-  const width = +svg.attr("width"), height = +svg.attr("height");
-  svg.selectAll("*").remove();
-
-  const g = svg.append("g"); // for zoom/pan
-
-  const zoom = d3.zoom().scaleExtent([0.3, 4]).on("zoom", (event) => g.attr("transform", event.transform));
-  svg.call(zoom);
-
-  d3.json(jsonPath).then(data => {
-    // Ensure nodes have a 'type' (temporal Hour nodes may not)
-    data.nodes.forEach(n => { if (!n.type && /^Hour /.test(n.id)) n.type = "Hour"; });
-
-    const color = d => {
-      if (highlight && d.id === highlight) return "#ff595e";
-      if (d.type === "Person") return "#7eb0d5";
-      if (d.type === "Vessel") return "#90d595";
-      if (d.type === "Organization" || d.type === "Group") return "#fdb462";
-      if (d.type === "Location") return "#e78ac3";
-      if (d.type === "Hour") return "#8da0cb";
-      return "#b0b0b0"; // Event/Other
-    };
-
-    const link = g.append("g").attr("stroke", "#aaa").selectAll("line")
-      .data(data.links).join("line")
-      .attr("stroke-width", d => d.value ? Math.max(1, d.value*6) : 1);
-
-    const node = g.append("g").selectAll("circle")
-      .data(data.nodes).join("circle")
-      .attr("r", 6.5)
-      .attr("fill", color)
-      .call(drag(simulation()));
-
-    const label = g.append("g").selectAll("text")
-      .data(data.nodes).join("text")
-      .text(d => d.id)
-      .attr("font-size", d => (d.type === "Event" ? 9 : 11))
-      .attr("dx", 10)
-      .attr("dy", ".35em");
-
-    const sim = simulation();
-    sim.nodes(data.nodes).on("tick", ticked);
-    sim.force("link").links(data.links);
-
-    function simulation() {
-      return d3.forceSimulation()
-        .force("link", d3.forceLink().id(d => d.id).distance(120))
-        .force("charge", d3.forceManyBody().strength(-260))
-        .force("center", d3.forceCenter(width/2, height/2));
-    }
-
-    function ticked() {
-      link.attr("x1", d => d.source.x).attr("y1", d => d.source.y)
-          .attr("x2", d => d.target.x).attr("y2", d => d.target.y);
-      node.attr("cx", d => d.x).attr("cy", d => d.y);
-      label.attr("x", d => d.x).attr("y", d => d.y);
-    }
-
-    function drag(sim) {
-      return d3.drag()
-        .on("start", (event) => {
-          if (!event.active) sim.alphaTarget(0.3).restart();
-          event.subject.fx = event.subject.x; event.subject.fy = event.subject.y;
-        })
-        .on("drag", (event) => {
-          event.subject.fx = event.x; event.subject.fy = event.y;
-        })
-        .on("end", (event) => {
-          if (!event.active) sim.alphaTarget(0);
-          event.subject.fx = null; event.subject.fy = null;
-        });
-    }
-  });
-}
-
-// Draw all four tabs
-drawGraph("#svg1", "temporal_network.json");
-drawGraph("#svg2", "people_vessel_network.json");
-drawGraph("#svg3", "pseudonym_network.json");
-// --- Nadia Conti toggleable view ---
-const nadiaSVG = "#svg4";
-const nadiaJSON = "nadia_network.json";
-
-function drawNadiaGraph(mode="default") {
-  d3.json(nadiaJSON).then(data => {
-    const svg = d3.select(nadiaSVG);
-    const width = +svg.attr("width"), height = +svg.attr("height");
-    svg.selectAll("*").remove();
-
-    const g = svg.append("g");
-    const zoom = d3.zoom().scaleExtent([0.3, 4]).on("zoom", (event) => g.attr("transform", event.transform));
-    svg.call(zoom);
-
-    const color = d => {
-      if (mode === "illicit") {
-        const st = d.sub_type || d.type;
-        if (d.id === "Nadia Conti") return "gold";
-        if (["Suspicious","Enforcement","IllegalActivity"].includes(st)) return "red";
-        if (["Monitoring","Assessment"].includes(st)) return "purple";
-        if (["Organization","AccessPermission","Authorization"].includes(st)) return "green";
-        if (["Vessel","Location"].includes(st)) return "gray";
-        return "lightblue";
-      } else {
-        // Default color scheme
-        if (d.id === "Nadia Conti") return "#ff595e";
-        if (d.type === "Person") return "#7eb0d5";
-        if (d.type === "Vessel") return "#90d595";
-        if (d.type === "Organization" || d.type === "Group") return "#fdb462";
-        if (d.type === "Location") return "#e78ac3";
-        return "#b0b0b0";
-      }
-    };
-
-    const link = g.append("g").attr("stroke", "#aaa").selectAll("line")
-      .data(data.links).join("line")
-      .attr("stroke-width", d => d.value ? Math.max(1, d.value*6) : 1);
-
-    const node = g.append("g").selectAll("circle")
-      .data(data.nodes).join("circle")
-      .attr("r", 7)
-      .attr("fill", color)
-      .call(drag(simulation()));
-
-    const label = g.append("g").selectAll("text")
-      .data(data.nodes).join("text")
-      .text(d => d.id)
-      .attr("font-size", 11)
-      .attr("dx", 10)
-      .attr("dy", ".35em");
-
-    const sim = simulation();
-    sim.nodes(data.nodes).on("tick", ticked);
-    sim.force("link").links(data.links);
-
-    function simulation() {
-      return d3.forceSimulation()
-        .force("link", d3.forceLink().id(d => d.id).distance(120))
-        .force("charge", d3.forceManyBody().strength(-260))
-        .force("center", d3.forceCenter(width/2, height/2));
-    }
-
-    function ticked() {
-      link.attr("x1", d => d.source.x).attr("y1", d => d.source.y)
-          .attr("x2", d => d.target.x).attr("y2", d => d.target.y);
-      node.attr("cx", d => d.x).attr("cy", d => d.y);
-      label.attr("x", d => d.x).attr("y", d => d.y);
-    }
-
-    function drag(sim) {
-      return d3.drag()
-        .on("start", (event) => { if (!event.active) sim.alphaTarget(0.3).restart(); event.subject.fx = event.subject.x; event.subject.fy = event.subject.y; })
-        .on("drag", (event) => { event.subject.fx = event.x; event.subject.fy = event.y; })
-        .on("end", (event) => { if (!event.active) sim.alphaTarget(0); event.subject.fx = null; event.subject.fy = null; });
-    }
-  });
-}
-
-// Draw initial Nadia graph
-drawNadiaGraph("default");
-
-// Add toggle listener
-d3.select("#nadiaMode").on("change", function() {
-  const mode = this.value;
-  drawNadiaGraph(mode);
-});
-
-
-d3.csv("pseudonym_pairs_full.csv").then(data => {
-  const tbody = d3.select("#pseudonymTable").select("tbody");
-  data.forEach(row => {
-    const tr = tbody.append("tr");
-    tr.append("td").text(row["Given Name"]).style("border","1px solid #999").style("padding","6px 12px");
-    tr.append("td").text(row["Pseudonym"]).style("border","1px solid #999").style("padding","6px 12px");
-    tr.append("td").text(row["Similarity"]).style("border","1px solid #999").style("padding","6px 12px");
-  });
-});
-
-</script>
 </body>
 </html>
