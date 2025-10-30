@@ -1,0 +1,1546 @@
+{
+  "nodes": [
+    {
+      "id": "Nemo Reef",
+      "type": "Location"
+    },
+    {
+      "id": "Mako",
+      "type": "Vessel"
+    },
+    {
+      "id": "Serenity",
+      "type": "Vessel"
+    },
+    {
+      "id": "Azure Cove",
+      "type": "Location"
+    },
+    {
+      "id": "Reef Guardian",
+      "type": "Vessel"
+    },
+    {
+      "id": "Davis",
+      "type": "Person"
+    },
+    {
+      "id": "Event_VesselMovement_122",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Coral Point",
+      "type": "Location"
+    },
+    {
+      "id": "Dolphin Bay",
+      "type": "Location"
+    },
+    {
+      "id": "Protected areas",
+      "type": "Location"
+    },
+    {
+      "id": "Himark Harbor",
+      "type": "Location"
+    },
+    {
+      "id": "Event_VesselMovement_25",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Paackland Harbor",
+      "type": "Location"
+    },
+    {
+      "id": "Remora",
+      "type": "Vessel"
+    },
+    {
+      "id": "Restricted Zone",
+      "type": "Location"
+    },
+    {
+      "id": "Oceanus City Council",
+      "type": "Organization"
+    },
+    {
+      "id": "Marlin",
+      "type": "Vessel"
+    },
+    {
+      "id": "Event_VesselMovement_1000",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Event_VesselMovement_892",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "South Dock",
+      "type": "Location"
+    },
+    {
+      "id": "Green Guardians",
+      "type": "Organization"
+    },
+    {
+      "id": "Horizon",
+      "type": "Vessel"
+    },
+    {
+      "id": "Western Boundary",
+      "type": "Location"
+    },
+    {
+      "id": "Sentinel",
+      "type": "Vessel"
+    },
+    {
+      "id": "Eastern Boundary",
+      "type": "Location"
+    },
+    {
+      "id": "Seawatch",
+      "type": "Vessel"
+    },
+    {
+      "id": "Southern Boundary",
+      "type": "Location"
+    },
+    {
+      "id": "Haacklee Harbor",
+      "type": "Location"
+    },
+    {
+      "id": "Osprey",
+      "type": "Vessel"
+    },
+    {
+      "id": "Tourists",
+      "type": "Group"
+    },
+    {
+      "id": "EcoVigil",
+      "type": "Vessel"
+    },
+    {
+      "id": "Rodriguez",
+      "type": "Person"
+    },
+    {
+      "id": "Sailor Shifts Team",
+      "type": "Organization"
+    },
+    {
+      "id": "Sailor Shift",
+      "type": "Person"
+    },
+    {
+      "id": "Small Fry",
+      "type": "Person"
+    },
+    {
+      "id": "Glitters Team",
+      "type": "Organization"
+    },
+    {
+      "id": "Event_VesselMovement_154",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Event_VesselMovement_157",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Defender",
+      "type": "Vessel"
+    },
+    {
+      "id": "The Lookout",
+      "type": "Person"
+    },
+    {
+      "id": "Event_VesselMovement_569",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Event_VesselMovement_190",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Southern islands",
+      "type": "Location"
+    },
+    {
+      "id": "Event_VesselMovement_210",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "V. Miesel Shipping",
+      "type": "Organization"
+    },
+    {
+      "id": "Southern coastline",
+      "type": "Location"
+    },
+    {
+      "id": "Northern Light",
+      "type": "Vessel"
+    },
+    {
+      "id": "Sam",
+      "type": "Person"
+    },
+    {
+      "id": "Event_VesselMovement_242",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Event_VesselMovement_549",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Mrs. Money",
+      "type": "Person"
+    },
+    {
+      "id": "The Intern",
+      "type": "Person"
+    },
+    {
+      "id": "Conservation Vessels",
+      "type": "Group"
+    },
+    {
+      "id": "Eastern Shoals",
+      "type": "Location"
+    },
+    {
+      "id": "Event_VesselMovement_284",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Event_VesselMovement_300",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Eastern Islands",
+      "type": "Location"
+    },
+    {
+      "id": "Event_VesselMovement_303",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Boss",
+      "type": "Person"
+    },
+    {
+      "id": "Event_VesselMovement_326",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Nadia Conti",
+      "type": "Person"
+    },
+    {
+      "id": "Event_VesselMovement_344",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Event_VesselMovement_363",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Samantha Blake",
+      "type": "Person"
+    },
+    {
+      "id": "Neptune",
+      "type": "Vessel"
+    },
+    {
+      "id": "Event_VesselMovement_393",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Event_VesselMovement_402",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "City Officials",
+      "type": "Group"
+    },
+    {
+      "id": "Event_VesselMovement_418",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Elise",
+      "type": "Person"
+    },
+    {
+      "id": "Event_VesselMovement_503",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Clepper Jensen",
+      "type": "Person"
+    },
+    {
+      "id": "Event_VesselMovement_483",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Route C",
+      "type": "Location"
+    },
+    {
+      "id": "Event_VesselMovement_494",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Event_VesselMovement_495",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Event_VesselMovement_510",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Event_VesselMovement_509",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Event_VesselMovement_516",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "The Accountant",
+      "type": "Person"
+    },
+    {
+      "id": "Event_VesselMovement_540",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Event_VesselMovement_563",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Event_VesselMovement_577",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Event_VesselMovement_580",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Western quadrant",
+      "type": "Location"
+    },
+    {
+      "id": "Event_VesselMovement_624",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Event_VesselMovement_629",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Eastern quadrant",
+      "type": "Location"
+    },
+    {
+      "id": "Event_VesselMovement_634",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Event_VesselMovement_670",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Liam Thorne",
+      "type": "Person"
+    },
+    {
+      "id": "Northern quadrant",
+      "type": "Location"
+    },
+    {
+      "id": "Event_VesselMovement_798",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Event_VesselMovement_806",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Castaway Cove",
+      "type": "Location"
+    },
+    {
+      "id": "Event_VesselMovement_843",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Event_VesselMovement_931",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Knowles",
+      "type": "Vessel"
+    },
+    {
+      "id": "Event_VesselMovement_883",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Event_VesselMovement_887",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Berth 14",
+      "type": "Location"
+    },
+    {
+      "id": "Event_VesselMovement_904",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Event_VesselMovement_944",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Event_VesselMovement_980",
+      "type": "VesselMovement"
+    },
+    {
+      "id": "Event_VesselMovement_1002",
+      "type": "VesselMovement"
+    }
+  ],
+  "links": [
+    {
+      "source": "Nemo Reef",
+      "target": "Mako"
+    },
+    {
+      "source": "Nemo Reef",
+      "target": "Serenity"
+    },
+    {
+      "source": "Nemo Reef",
+      "target": "Reef Guardian"
+    },
+    {
+      "source": "Nemo Reef",
+      "target": "Remora"
+    },
+    {
+      "source": "Nemo Reef",
+      "target": "Horizon"
+    },
+    {
+      "source": "Nemo Reef",
+      "target": "Sentinel"
+    },
+    {
+      "source": "Nemo Reef",
+      "target": "Seawatch"
+    },
+    {
+      "source": "Nemo Reef",
+      "target": "EcoVigil"
+    },
+    {
+      "source": "Nemo Reef",
+      "target": "Event_VesselMovement_154"
+    },
+    {
+      "source": "Nemo Reef",
+      "target": "Event_VesselMovement_157"
+    },
+    {
+      "source": "Nemo Reef",
+      "target": "Defender"
+    },
+    {
+      "source": "Nemo Reef",
+      "target": "Event_VesselMovement_569"
+    },
+    {
+      "source": "Nemo Reef",
+      "target": "Northern Light"
+    },
+    {
+      "source": "Nemo Reef",
+      "target": "Event_VesselMovement_242"
+    },
+    {
+      "source": "Nemo Reef",
+      "target": "Event_VesselMovement_549"
+    },
+    {
+      "source": "Nemo Reef",
+      "target": "Marlin"
+    },
+    {
+      "source": "Nemo Reef",
+      "target": "Event_VesselMovement_122"
+    },
+    {
+      "source": "Nemo Reef",
+      "target": "Event_VesselMovement_344"
+    },
+    {
+      "source": "Nemo Reef",
+      "target": "Event_VesselMovement_363"
+    },
+    {
+      "source": "Nemo Reef",
+      "target": "Event_VesselMovement_25"
+    },
+    {
+      "source": "Nemo Reef",
+      "target": "Neptune"
+    },
+    {
+      "source": "Nemo Reef",
+      "target": "Event_VesselMovement_393"
+    },
+    {
+      "source": "Nemo Reef",
+      "target": "Event_VesselMovement_510"
+    },
+    {
+      "source": "Nemo Reef",
+      "target": "Event_VesselMovement_509"
+    },
+    {
+      "source": "Nemo Reef",
+      "target": "Event_VesselMovement_516"
+    },
+    {
+      "source": "Nemo Reef",
+      "target": "Event_VesselMovement_540"
+    },
+    {
+      "source": "Nemo Reef",
+      "target": "Event_VesselMovement_563"
+    },
+    {
+      "source": "Nemo Reef",
+      "target": "Event_VesselMovement_624"
+    },
+    {
+      "source": "Nemo Reef",
+      "target": "Event_VesselMovement_629"
+    },
+    {
+      "source": "Nemo Reef",
+      "target": "Event_VesselMovement_670"
+    },
+    {
+      "source": "Nemo Reef",
+      "target": "Event_VesselMovement_806"
+    },
+    {
+      "source": "Nemo Reef",
+      "target": "Event_VesselMovement_887"
+    },
+    {
+      "source": "Nemo Reef",
+      "target": "Event_VesselMovement_944"
+    },
+    {
+      "source": "Mako",
+      "target": "Tourists"
+    },
+    {
+      "source": "Mako",
+      "target": "Haacklee Harbor"
+    },
+    {
+      "source": "Mako",
+      "target": "Davis"
+    },
+    {
+      "source": "Mako",
+      "target": "Rodriguez"
+    },
+    {
+      "source": "Mako",
+      "target": "Coral Point"
+    },
+    {
+      "source": "Mako",
+      "target": "Dolphin Bay"
+    },
+    {
+      "source": "Mako",
+      "target": "Himark Harbor"
+    },
+    {
+      "source": "Mako",
+      "target": "Small Fry"
+    },
+    {
+      "source": "Mako",
+      "target": "Glitters Team"
+    },
+    {
+      "source": "Mako",
+      "target": "South Dock"
+    },
+    {
+      "source": "Mako",
+      "target": "Azure Cove"
+    },
+    {
+      "source": "Mako",
+      "target": "Sam"
+    },
+    {
+      "source": "Mako",
+      "target": "Green Guardians"
+    },
+    {
+      "source": "Mako",
+      "target": "Paackland Harbor"
+    },
+    {
+      "source": "Mako",
+      "target": "Oceanus City Council"
+    },
+    {
+      "source": "Mako",
+      "target": "Eastern Islands"
+    },
+    {
+      "source": "Mako",
+      "target": "Boss"
+    },
+    {
+      "source": "Mako",
+      "target": "Nadia Conti"
+    },
+    {
+      "source": "Mako",
+      "target": "Samantha Blake"
+    },
+    {
+      "source": "Mako",
+      "target": "Elise"
+    },
+    {
+      "source": "Mako",
+      "target": "Mrs. Money"
+    },
+    {
+      "source": "Mako",
+      "target": "Route C"
+    },
+    {
+      "source": "Mako",
+      "target": "Castaway Cove"
+    },
+    {
+      "source": "Mako",
+      "target": "Western Boundary"
+    },
+    {
+      "source": "Mako",
+      "target": "Sailor Shift"
+    },
+    {
+      "source": "Mako",
+      "target": "Sailor Shifts Team"
+    },
+    {
+      "source": "Serenity",
+      "target": "Azure Cove"
+    },
+    {
+      "source": "Serenity",
+      "target": "Protected areas"
+    },
+    {
+      "source": "Serenity",
+      "target": "Himark Harbor"
+    },
+    {
+      "source": "Serenity",
+      "target": "Oceanus City Council"
+    },
+    {
+      "source": "Serenity",
+      "target": "Paackland Harbor"
+    },
+    {
+      "source": "Serenity",
+      "target": "Dolphin Bay"
+    },
+    {
+      "source": "Serenity",
+      "target": "Boss"
+    },
+    {
+      "source": "Azure Cove",
+      "target": "Remora"
+    },
+    {
+      "source": "Azure Cove",
+      "target": "Event_VesselMovement_1000"
+    },
+    {
+      "source": "Azure Cove",
+      "target": "Event_VesselMovement_892"
+    },
+    {
+      "source": "Reef Guardian",
+      "target": "Paackland Harbor"
+    },
+    {
+      "source": "Reef Guardian",
+      "target": "Green Guardians"
+    },
+    {
+      "source": "Reef Guardian",
+      "target": "Protected areas"
+    },
+    {
+      "source": "Reef Guardian",
+      "target": "Restricted Zone"
+    },
+    {
+      "source": "Reef Guardian",
+      "target": "Sam"
+    },
+    {
+      "source": "Reef Guardian",
+      "target": "Eastern Shoals"
+    },
+    {
+      "source": "Reef Guardian",
+      "target": "Southern Boundary"
+    },
+    {
+      "source": "Reef Guardian",
+      "target": "Oceanus City Council"
+    },
+    {
+      "source": "Reef Guardian",
+      "target": "Western quadrant"
+    },
+    {
+      "source": "Reef Guardian",
+      "target": "Eastern quadrant"
+    },
+    {
+      "source": "Reef Guardian",
+      "target": "Eastern Boundary"
+    },
+    {
+      "source": "Reef Guardian",
+      "target": "The Lookout"
+    },
+    {
+      "source": "Reef Guardian",
+      "target": "Dolphin Bay"
+    },
+    {
+      "source": "Reef Guardian",
+      "target": "Conservation Vessels"
+    },
+    {
+      "source": "Davis",
+      "target": "Event_VesselMovement_122"
+    },
+    {
+      "source": "Davis",
+      "target": "Marlin"
+    },
+    {
+      "source": "Davis",
+      "target": "Remora"
+    },
+    {
+      "source": "Davis",
+      "target": "Event_VesselMovement_549"
+    },
+    {
+      "source": "Davis",
+      "target": "Neptune"
+    },
+    {
+      "source": "Davis",
+      "target": "Event_VesselMovement_580"
+    },
+    {
+      "source": "Davis",
+      "target": "Event_VesselMovement_843"
+    },
+    {
+      "source": "Davis",
+      "target": "Event_VesselMovement_892"
+    },
+    {
+      "source": "Davis",
+      "target": "Event_VesselMovement_980"
+    },
+    {
+      "source": "Davis",
+      "target": "Event_VesselMovement_1000"
+    },
+    {
+      "source": "Davis",
+      "target": "Event_VesselMovement_1002"
+    },
+    {
+      "source": "Event_VesselMovement_122",
+      "target": "Coral Point"
+    },
+    {
+      "source": "Event_VesselMovement_122",
+      "target": "Dolphin Bay"
+    },
+    {
+      "source": "Event_VesselMovement_122",
+      "target": "Himark Harbor"
+    },
+    {
+      "source": "Event_VesselMovement_122",
+      "target": "Sailor Shifts Team"
+    },
+    {
+      "source": "Event_VesselMovement_122",
+      "target": "Sailor Shift"
+    },
+    {
+      "source": "Event_VesselMovement_122",
+      "target": "Oceanus City Council"
+    },
+    {
+      "source": "Event_VesselMovement_122",
+      "target": "Sam"
+    },
+    {
+      "source": "Event_VesselMovement_122",
+      "target": "Boss"
+    },
+    {
+      "source": "Event_VesselMovement_122",
+      "target": "Samantha Blake"
+    },
+    {
+      "source": "Event_VesselMovement_122",
+      "target": "Paackland Harbor"
+    },
+    {
+      "source": "Event_VesselMovement_122",
+      "target": "Elise"
+    },
+    {
+      "source": "Event_VesselMovement_122",
+      "target": "Castaway Cove"
+    },
+    {
+      "source": "Dolphin Bay",
+      "target": "Remora"
+    },
+    {
+      "source": "Dolphin Bay",
+      "target": "Event_VesselMovement_1000"
+    },
+    {
+      "source": "Dolphin Bay",
+      "target": "Event_VesselMovement_892"
+    },
+    {
+      "source": "Dolphin Bay",
+      "target": "Event_VesselMovement_944"
+    },
+    {
+      "source": "Protected areas",
+      "target": "Horizon"
+    },
+    {
+      "source": "Protected areas",
+      "target": "Remora"
+    },
+    {
+      "source": "Himark Harbor",
+      "target": "Event_VesselMovement_25"
+    },
+    {
+      "source": "Himark Harbor",
+      "target": "Marlin"
+    },
+    {
+      "source": "Himark Harbor",
+      "target": "Osprey"
+    },
+    {
+      "source": "Himark Harbor",
+      "target": "Seawatch"
+    },
+    {
+      "source": "Himark Harbor",
+      "target": "Event_VesselMovement_190"
+    },
+    {
+      "source": "Himark Harbor",
+      "target": "Event_VesselMovement_300"
+    },
+    {
+      "source": "Himark Harbor",
+      "target": "Event_VesselMovement_303"
+    },
+    {
+      "source": "Himark Harbor",
+      "target": "Remora"
+    },
+    {
+      "source": "Himark Harbor",
+      "target": "Event_VesselMovement_326"
+    },
+    {
+      "source": "Himark Harbor",
+      "target": "Event_VesselMovement_344"
+    },
+    {
+      "source": "Himark Harbor",
+      "target": "Neptune"
+    },
+    {
+      "source": "Himark Harbor",
+      "target": "Event_VesselMovement_393"
+    },
+    {
+      "source": "Himark Harbor",
+      "target": "Event_VesselMovement_510"
+    },
+    {
+      "source": "Himark Harbor",
+      "target": "Event_VesselMovement_509"
+    },
+    {
+      "source": "Himark Harbor",
+      "target": "Event_VesselMovement_577"
+    },
+    {
+      "source": "Himark Harbor",
+      "target": "Event_VesselMovement_634"
+    },
+    {
+      "source": "Himark Harbor",
+      "target": "Northern Light"
+    },
+    {
+      "source": "Himark Harbor",
+      "target": "Event_VesselMovement_402"
+    },
+    {
+      "source": "Event_VesselMovement_25",
+      "target": "Oceanus City Council"
+    },
+    {
+      "source": "Paackland Harbor",
+      "target": "Remora"
+    },
+    {
+      "source": "Paackland Harbor",
+      "target": "Sentinel"
+    },
+    {
+      "source": "Paackland Harbor",
+      "target": "EcoVigil"
+    },
+    {
+      "source": "Paackland Harbor",
+      "target": "Event_VesselMovement_904"
+    },
+    {
+      "source": "Remora",
+      "target": "Restricted Zone"
+    },
+    {
+      "source": "Remora",
+      "target": "South Dock"
+    },
+    {
+      "source": "Remora",
+      "target": "Small Fry"
+    },
+    {
+      "source": "Remora",
+      "target": "Glitters Team"
+    },
+    {
+      "source": "Remora",
+      "target": "Southern islands"
+    },
+    {
+      "source": "Remora",
+      "target": "V. Miesel Shipping"
+    },
+    {
+      "source": "Remora",
+      "target": "Southern coastline"
+    },
+    {
+      "source": "Remora",
+      "target": "Sailor Shift"
+    },
+    {
+      "source": "Remora",
+      "target": "Boss"
+    },
+    {
+      "source": "Remora",
+      "target": "Elise"
+    },
+    {
+      "source": "Remora",
+      "target": "Route C"
+    },
+    {
+      "source": "Remora",
+      "target": "Mrs. Money"
+    },
+    {
+      "source": "Remora",
+      "target": "Rodriguez"
+    },
+    {
+      "source": "Remora",
+      "target": "Conservation Vessels"
+    },
+    {
+      "source": "Restricted Zone",
+      "target": "Sentinel"
+    },
+    {
+      "source": "Restricted Zone",
+      "target": "Defender"
+    },
+    {
+      "source": "Restricted Zone",
+      "target": "Event_VesselMovement_580"
+    },
+    {
+      "source": "Restricted Zone",
+      "target": "Northern Light"
+    },
+    {
+      "source": "Oceanus City Council",
+      "target": "Marlin"
+    },
+    {
+      "source": "Oceanus City Council",
+      "target": "Event_VesselMovement_569"
+    },
+    {
+      "source": "Oceanus City Council",
+      "target": "Northern Light"
+    },
+    {
+      "source": "Oceanus City Council",
+      "target": "Event_VesselMovement_300"
+    },
+    {
+      "source": "Oceanus City Council",
+      "target": "Event_VesselMovement_344"
+    },
+    {
+      "source": "Oceanus City Council",
+      "target": "Event_VesselMovement_549"
+    },
+    {
+      "source": "Oceanus City Council",
+      "target": "Sentinel"
+    },
+    {
+      "source": "Oceanus City Council",
+      "target": "EcoVigil"
+    },
+    {
+      "source": "Oceanus City Council",
+      "target": "Event_VesselMovement_931"
+    },
+    {
+      "source": "Oceanus City Council",
+      "target": "Event_VesselMovement_887"
+    },
+    {
+      "source": "Marlin",
+      "target": "Eastern Boundary"
+    },
+    {
+      "source": "Marlin",
+      "target": "Eastern quadrant"
+    },
+    {
+      "source": "Event_VesselMovement_1000",
+      "target": "South Dock"
+    },
+    {
+      "source": "Event_VesselMovement_1000",
+      "target": "Boss"
+    },
+    {
+      "source": "Event_VesselMovement_892",
+      "target": "South Dock"
+    },
+    {
+      "source": "Event_VesselMovement_892",
+      "target": "Conservation Vessels"
+    },
+    {
+      "source": "Event_VesselMovement_892",
+      "target": "Rodriguez"
+    },
+    {
+      "source": "Event_VesselMovement_892",
+      "target": "Small Fry"
+    },
+    {
+      "source": "South Dock",
+      "target": "Event_VesselMovement_157"
+    },
+    {
+      "source": "Green Guardians",
+      "target": "Horizon"
+    },
+    {
+      "source": "Green Guardians",
+      "target": "Sentinel"
+    },
+    {
+      "source": "Green Guardians",
+      "target": "Seawatch"
+    },
+    {
+      "source": "Green Guardians",
+      "target": "EcoVigil"
+    },
+    {
+      "source": "Green Guardians",
+      "target": "Event_VesselMovement_569"
+    },
+    {
+      "source": "Green Guardians",
+      "target": "Event_VesselMovement_210"
+    },
+    {
+      "source": "Green Guardians",
+      "target": "Northern Light"
+    },
+    {
+      "source": "Green Guardians",
+      "target": "Event_VesselMovement_670"
+    },
+    {
+      "source": "Horizon",
+      "target": "Western Boundary"
+    },
+    {
+      "source": "Horizon",
+      "target": "Eastern Boundary"
+    },
+    {
+      "source": "Horizon",
+      "target": "Sam"
+    },
+    {
+      "source": "Horizon",
+      "target": "Southern Boundary"
+    },
+    {
+      "source": "Horizon",
+      "target": "The Lookout"
+    },
+    {
+      "source": "Sentinel",
+      "target": "Eastern Boundary"
+    },
+    {
+      "source": "Sentinel",
+      "target": "The Lookout"
+    },
+    {
+      "source": "Sentinel",
+      "target": "Southern Boundary"
+    },
+    {
+      "source": "Sentinel",
+      "target": "Sam"
+    },
+    {
+      "source": "Eastern Boundary",
+      "target": "EcoVigil"
+    },
+    {
+      "source": "Eastern Boundary",
+      "target": "Defender"
+    },
+    {
+      "source": "Eastern Boundary",
+      "target": "Event_VesselMovement_210"
+    },
+    {
+      "source": "Seawatch",
+      "target": "Southern Boundary"
+    },
+    {
+      "source": "Seawatch",
+      "target": "Eastern quadrant"
+    },
+    {
+      "source": "Seawatch",
+      "target": "Sam"
+    },
+    {
+      "source": "Southern Boundary",
+      "target": "Event_VesselMovement_483"
+    },
+    {
+      "source": "Southern Boundary",
+      "target": "Event_VesselMovement_563"
+    },
+    {
+      "source": "Haacklee Harbor",
+      "target": "Osprey"
+    },
+    {
+      "source": "Haacklee Harbor",
+      "target": "EcoVigil"
+    },
+    {
+      "source": "Haacklee Harbor",
+      "target": "Event_VesselMovement_670"
+    },
+    {
+      "source": "Haacklee Harbor",
+      "target": "Knowles"
+    },
+    {
+      "source": "Haacklee Harbor",
+      "target": "Event_VesselMovement_883"
+    },
+    {
+      "source": "Haacklee Harbor",
+      "target": "Event_VesselMovement_887"
+    },
+    {
+      "source": "Osprey",
+      "target": "Castaway Cove"
+    },
+    {
+      "source": "Tourists",
+      "target": "Event_VesselMovement_806"
+    },
+    {
+      "source": "EcoVigil",
+      "target": "Western quadrant"
+    },
+    {
+      "source": "EcoVigil",
+      "target": "Sam"
+    },
+    {
+      "source": "EcoVigil",
+      "target": "Liam Thorne"
+    },
+    {
+      "source": "EcoVigil",
+      "target": "Northern quadrant"
+    },
+    {
+      "source": "Rodriguez",
+      "target": "Event_VesselMovement_157"
+    },
+    {
+      "source": "Rodriguez",
+      "target": "Event_VesselMovement_549"
+    },
+    {
+      "source": "Rodriguez",
+      "target": "Event_VesselMovement_509"
+    },
+    {
+      "source": "Rodriguez",
+      "target": "Event_VesselMovement_510"
+    },
+    {
+      "source": "Sailor Shifts Team",
+      "target": "Event_VesselMovement_509"
+    },
+    {
+      "source": "Sailor Shifts Team",
+      "target": "Event_VesselMovement_510"
+    },
+    {
+      "source": "Sailor Shift",
+      "target": "Neptune"
+    },
+    {
+      "source": "Sailor Shift",
+      "target": "Event_VesselMovement_509"
+    },
+    {
+      "source": "Sailor Shift",
+      "target": "Event_VesselMovement_510"
+    },
+    {
+      "source": "Small Fry",
+      "target": "Event_VesselMovement_154"
+    },
+    {
+      "source": "Glitters Team",
+      "target": "Event_VesselMovement_154"
+    },
+    {
+      "source": "Glitters Team",
+      "target": "Northern Light"
+    },
+    {
+      "source": "The Lookout",
+      "target": "Event_VesselMovement_242"
+    },
+    {
+      "source": "The Lookout",
+      "target": "Event_VesselMovement_549"
+    },
+    {
+      "source": "The Lookout",
+      "target": "Event_VesselMovement_393"
+    },
+    {
+      "source": "The Lookout",
+      "target": "Event_VesselMovement_798"
+    },
+    {
+      "source": "V. Miesel Shipping",
+      "target": "Neptune"
+    },
+    {
+      "source": "V. Miesel Shipping",
+      "target": "Event_VesselMovement_549"
+    },
+    {
+      "source": "V. Miesel Shipping",
+      "target": "Event_VesselMovement_843"
+    },
+    {
+      "source": "Sam",
+      "target": "Event_VesselMovement_242"
+    },
+    {
+      "source": "Sam",
+      "target": "Event_VesselMovement_549"
+    },
+    {
+      "source": "Sam",
+      "target": "Neptune"
+    },
+    {
+      "source": "Sam",
+      "target": "Event_VesselMovement_418"
+    },
+    {
+      "source": "Sam",
+      "target": "Event_VesselMovement_393"
+    },
+    {
+      "source": "Sam",
+      "target": "Event_VesselMovement_624"
+    },
+    {
+      "source": "Sam",
+      "target": "Event_VesselMovement_670"
+    },
+    {
+      "source": "Event_VesselMovement_549",
+      "target": "Mrs. Money"
+    },
+    {
+      "source": "Event_VesselMovement_549",
+      "target": "The Intern"
+    },
+    {
+      "source": "Event_VesselMovement_549",
+      "target": "Conservation Vessels"
+    },
+    {
+      "source": "Event_VesselMovement_549",
+      "target": "Nadia Conti"
+    },
+    {
+      "source": "Event_VesselMovement_549",
+      "target": "Elise"
+    },
+    {
+      "source": "Mrs. Money",
+      "target": "Neptune"
+    },
+    {
+      "source": "Mrs. Money",
+      "target": "Event_VesselMovement_503"
+    },
+    {
+      "source": "Mrs. Money",
+      "target": "Event_VesselMovement_540"
+    },
+    {
+      "source": "Mrs. Money",
+      "target": "Event_VesselMovement_509"
+    },
+    {
+      "source": "Conservation Vessels",
+      "target": "Neptune"
+    },
+    {
+      "source": "Conservation Vessels",
+      "target": "Event_VesselMovement_980"
+    },
+    {
+      "source": "Eastern Shoals",
+      "target": "Event_VesselMovement_284"
+    },
+    {
+      "source": "Eastern Shoals",
+      "target": "Event_VesselMovement_580"
+    },
+    {
+      "source": "Event_VesselMovement_300",
+      "target": "Eastern Islands"
+    },
+    {
+      "source": "Eastern Islands",
+      "target": "Event_VesselMovement_303"
+    },
+    {
+      "source": "Boss",
+      "target": "Event_VesselMovement_363"
+    },
+    {
+      "source": "Boss",
+      "target": "Event_VesselMovement_402"
+    },
+    {
+      "source": "Boss",
+      "target": "Neptune"
+    },
+    {
+      "source": "Nadia Conti",
+      "target": "Event_VesselMovement_843"
+    },
+    {
+      "source": "Samantha Blake",
+      "target": "Neptune"
+    },
+    {
+      "source": "Neptune",
+      "target": "Route C"
+    },
+    {
+      "source": "Neptune",
+      "target": "The Accountant"
+    },
+    {
+      "source": "Neptune",
+      "target": "Berth 14"
+    },
+    {
+      "source": "Event_VesselMovement_393",
+      "target": "Clepper Jensen"
+    },
+    {
+      "source": "Event_VesselMovement_393",
+      "target": "Elise"
+    },
+    {
+      "source": "Event_VesselMovement_402",
+      "target": "Elise"
+    },
+    {
+      "source": "Event_VesselMovement_402",
+      "target": "Berth 14"
+    },
+    {
+      "source": "City Officials",
+      "target": "Event_VesselMovement_418"
+    },
+    {
+      "source": "Elise",
+      "target": "Event_VesselMovement_503"
+    },
+    {
+      "source": "Elise",
+      "target": "Event_VesselMovement_494"
+    },
+    {
+      "source": "Elise",
+      "target": "Event_VesselMovement_495"
+    },
+    {
+      "source": "Elise",
+      "target": "Event_VesselMovement_516"
+    },
+    {
+      "source": "Event_VesselMovement_503",
+      "target": "Route C"
+    },
+    {
+      "source": "Route C",
+      "target": "Event_VesselMovement_494"
+    },
+    {
+      "source": "Route C",
+      "target": "Event_VesselMovement_495"
+    },
+    {
+      "source": "Route C",
+      "target": "Event_VesselMovement_510"
+    },
+    {
+      "source": "Route C",
+      "target": "Event_VesselMovement_509"
+    },
+    {
+      "source": "Event_VesselMovement_577",
+      "target": "Eastern quadrant"
+    },
+    {
+      "source": "Western quadrant",
+      "target": "Event_VesselMovement_624"
+    },
+    {
+      "source": "Western quadrant",
+      "target": "Event_VesselMovement_670"
+    },
+    {
+      "source": "Western quadrant",
+      "target": "Event_VesselMovement_931"
+    },
+    {
+      "source": "Event_VesselMovement_629",
+      "target": "Eastern quadrant"
+    },
+    {
+      "source": "Liam Thorne",
+      "target": "Event_VesselMovement_931"
+    },
+    {
+      "source": "Northern quadrant",
+      "target": "Event_VesselMovement_931"
+    },
+    {
+      "source": "Berth 14",
+      "target": "Event_VesselMovement_980"
+    }
+  ]
+}

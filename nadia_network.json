@@ -1,0 +1,266 @@
+{
+  "nodes": [
+    {
+      "id": "Event_Communication_847",
+      "type": "Communication"
+    },
+    {
+      "id": "EcoVigil",
+      "type": "Vessel"
+    },
+    {
+      "id": "Nadia Conti",
+      "type": "Person"
+    },
+    {
+      "id": "Relationship_Colleagues_322",
+      "type": "Colleagues"
+    },
+    {
+      "id": "Event_Communication_331",
+      "type": "Communication"
+    },
+    {
+      "id": "Event_Communication_584",
+      "type": "Communication"
+    },
+    {
+      "id": "Relationship_Colleagues_431",
+      "type": "Colleagues"
+    },
+    {
+      "id": "Event_Collaborate_868",
+      "type": "Collaborate"
+    },
+    {
+      "id": "Relationship_Colleagues_551",
+      "type": "Colleagues"
+    },
+    {
+      "id": "Event_Communication_536",
+      "type": "Communication"
+    },
+    {
+      "id": "Relationship_AccessPermission_181",
+      "type": "AccessPermission"
+    },
+    {
+      "id": "Event_Communication_538",
+      "type": "Communication"
+    },
+    {
+      "id": "Haacklee Harbor",
+      "type": "Location"
+    },
+    {
+      "id": "Oceanus City Council",
+      "type": "Organization"
+    },
+    {
+      "id": "Neptune",
+      "type": "Vessel"
+    },
+    {
+      "id": "Relationship_AccessPermission_313",
+      "type": "AccessPermission"
+    },
+    {
+      "id": "Nemo Reef",
+      "type": "Location"
+    },
+    {
+      "id": "Relationship_Coordinates_493",
+      "type": "Coordinates"
+    },
+    {
+      "id": "Marlin",
+      "type": "Vessel"
+    },
+    {
+      "id": "Liam Thorne",
+      "type": "Person"
+    },
+    {
+      "id": "Event_Communication_334",
+      "type": "Communication"
+    },
+    {
+      "id": "Event_Assessment_583",
+      "type": "Assessment"
+    },
+    {
+      "id": "Relationship_Colleagues_319",
+      "type": "Colleagues"
+    },
+    {
+      "id": "V. Miesel Shipping",
+      "type": "Organization"
+    },
+    {
+      "id": "Relationship_Colleagues_321",
+      "type": "Colleagues"
+    },
+    {
+      "id": "Event_Communication_529",
+      "type": "Communication"
+    },
+    {
+      "id": "Event_Communication_795",
+      "type": "Communication"
+    },
+    {
+      "id": "Relationship_Colleagues_494",
+      "type": "Colleagues"
+    }
+  ],
+  "links": [
+    {
+      "source": "Event_Communication_847",
+      "target": "V. Miesel Shipping"
+    },
+    {
+      "source": "Nadia Conti",
+      "target": "Relationship_AccessPermission_181"
+    },
+    {
+      "source": "Nadia Conti",
+      "target": "Event_Communication_331"
+    },
+    {
+      "source": "Nadia Conti",
+      "target": "Event_Communication_334"
+    },
+    {
+      "source": "Nadia Conti",
+      "target": "Event_Communication_529"
+    },
+    {
+      "source": "Nadia Conti",
+      "target": "Event_Communication_536"
+    },
+    {
+      "source": "Nadia Conti",
+      "target": "Relationship_Colleagues_321"
+    },
+    {
+      "source": "Nadia Conti",
+      "target": "Event_Communication_538"
+    },
+    {
+      "source": "Nadia Conti",
+      "target": "Event_Communication_584"
+    },
+    {
+      "source": "Nadia Conti",
+      "target": "Relationship_Coordinates_493"
+    },
+    {
+      "source": "Nadia Conti",
+      "target": "Relationship_Colleagues_494"
+    },
+    {
+      "source": "Nadia Conti",
+      "target": "Event_Communication_795"
+    },
+    {
+      "source": "Nadia Conti",
+      "target": "Event_Communication_847"
+    },
+    {
+      "source": "Nadia Conti",
+      "target": "Event_Collaborate_868"
+    },
+    {
+      "source": "Nadia Conti",
+      "target": "Relationship_Colleagues_431"
+    },
+    {
+      "source": "Nadia Conti",
+      "target": "Relationship_Colleagues_551"
+    },
+    {
+      "source": "Nadia Conti",
+      "target": "Relationship_Colleagues_322"
+    },
+    {
+      "source": "Nadia Conti",
+      "target": "Relationship_Colleagues_319"
+    },
+    {
+      "source": "Event_Communication_331",
+      "target": "Haacklee Harbor"
+    },
+    {
+      "source": "Event_Communication_331",
+      "target": "Relationship_AccessPermission_181"
+    },
+    {
+      "source": "Event_Communication_584",
+      "target": "Marlin"
+    },
+    {
+      "source": "Event_Communication_584",
+      "target": "Event_Assessment_583"
+    },
+    {
+      "source": "Event_Communication_536",
+      "target": "Neptune"
+    },
+    {
+      "source": "Relationship_AccessPermission_181",
+      "target": "Nemo Reef"
+    },
+    {
+      "source": "Event_Communication_538",
+      "target": "Neptune"
+    },
+    {
+      "source": "Event_Communication_538",
+      "target": "Relationship_Colleagues_322"
+    },
+    {
+      "source": "Neptune",
+      "target": "Relationship_Colleagues_319"
+    },
+    {
+      "source": "Relationship_AccessPermission_313",
+      "target": "Nemo Reef"
+    },
+    {
+      "source": "Relationship_Coordinates_493",
+      "target": "EcoVigil"
+    },
+    {
+      "source": "Liam Thorne",
+      "target": "Relationship_AccessPermission_313"
+    },
+    {
+      "source": "Liam Thorne",
+      "target": "Relationship_Colleagues_494"
+    },
+    {
+      "source": "Event_Communication_334",
+      "target": "Oceanus City Council"
+    },
+    {
+      "source": "Event_Communication_529",
+      "target": "Liam Thorne"
+    },
+    {
+      "source": "Event_Communication_529",
+      "target": "Relationship_AccessPermission_313"
+    },
+    {
+      "source": "Event_Communication_795",
+      "target": "Liam Thorne"
+    },
+    {
+      "source": "Event_Communication_795",
+      "target": "Relationship_Coordinates_493"
+    },
+    {
+      "source": "Event_Communication_795",
+      "target": "Relationship_Colleagues_494"
+    }
+  ]
+}

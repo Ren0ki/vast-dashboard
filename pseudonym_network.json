@@ -1,0 +1,179 @@
+{
+  "nodes": [
+    {
+      "id": "The Accountant",
+      "type": "Alias"
+    },
+    {
+      "id": "The Middleman",
+      "type": "Alias"
+    },
+    {
+      "id": "Kelly",
+      "type": "Alias"
+    },
+    {
+      "id": "Elise",
+      "type": "Alias"
+    },
+    {
+      "id": "Sailor Shift",
+      "type": "Alias"
+    },
+    {
+      "id": "The Intern",
+      "type": "Alias"
+    },
+    {
+      "id": "Nadia Conti",
+      "type": "Alias"
+    },
+    {
+      "id": "Small Fry",
+      "type": "Alias"
+    },
+    {
+      "id": "Rodriguez",
+      "type": "Alias"
+    },
+    {
+      "id": "Clepper Jensen",
+      "type": "Alias"
+    },
+    {
+      "id": "Liam Thorne",
+      "type": "Alias"
+    },
+    {
+      "id": "Sam",
+      "type": "Alias"
+    },
+    {
+      "id": "Davis",
+      "type": "Alias"
+    },
+    {
+      "id": "Miranda Jordan",
+      "type": "Alias"
+    },
+    {
+      "id": "Boss",
+      "type": "Alias"
+    },
+    {
+      "id": "Mrs. Money",
+      "type": "Alias"
+    },
+    {
+      "id": "The Lookout",
+      "type": "Alias"
+    }
+  ],
+  "links": [
+    {
+      "source": "Sam",
+      "target": "Kelly",
+      "value": 0.33
+    },
+    {
+      "source": "The Intern",
+      "target": "Mrs. Money",
+      "value": 0.25
+    },
+    {
+      "source": "Clepper Jensen",
+      "target": "Miranda Jordan",
+      "value": 0.12
+    },
+    {
+      "source": "The Middleman",
+      "target": "Boss",
+      "value": 0.12
+    },
+    {
+      "source": "Sam",
+      "target": "Elise",
+      "value": 0.1
+    },
+    {
+      "source": "The Accountant",
+      "target": "The Middleman",
+      "value": 0.1
+    },
+    {
+      "source": "The Intern",
+      "target": "The Lookout",
+      "value": 0.09
+    },
+    {
+      "source": "Nadia Conti",
+      "target": "Elise",
+      "value": 0.08
+    },
+    {
+      "source": "Nadia Conti",
+      "target": "The Accountant",
+      "value": 0.08
+    },
+    {
+      "source": "Davis",
+      "target": "Rodriguez",
+      "value": 0.07
+    },
+    {
+      "source": "Sam",
+      "target": "Nadia Conti",
+      "value": 0.07
+    },
+    {
+      "source": "Nadia Conti",
+      "target": "Davis",
+      "value": 0.07
+    },
+    {
+      "source": "The Accountant",
+      "target": "Boss",
+      "value": 0.06
+    },
+    {
+      "source": "Mrs. Money",
+      "target": "The Middleman",
+      "value": 0.06
+    },
+    {
+      "source": "Boss",
+      "target": "Small Fry",
+      "value": 0.05
+    },
+    {
+      "source": "Rodriguez",
+      "target": "Boss",
+      "value": 0.05
+    },
+    {
+      "source": "Davis",
+      "target": "Sailor Shift",
+      "value": 0.05
+    },
+    {
+      "source": "Nadia Conti",
+      "target": "Liam Thorne",
+      "value": 0.04
+    },
+    {
+      "source": "Mrs. Money",
+      "target": "Boss",
+      "value": 0.04
+    },
+    {
+      "source": "Davis",
+      "target": "Boss",
+      "value": 0.03
+    },
+    {
+      "source": "Davis",
+      "target": "Small Fry",
+      "value": 0.03
+    }
+  ]
+}
