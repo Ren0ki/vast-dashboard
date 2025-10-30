@@ -1,4 +1,3 @@
-// --- Tabs ---
 function openTab(evt, name) {
   const tabs = document.getElementsByClassName("tabcontent");
   for (let i = 0; i < tabs.length; i++) tabs[i].style.display = "none";
@@ -9,6 +8,18 @@ function openTab(evt, name) {
 
   document.getElementById(name).style.display = "block";
   evt.currentTarget.className += " active";
+
+  // 🔁 Re-draw the D3 graph for each tab when opened
+  if (name === "Temporal") {
+    drawGraph("#svg1", "temporal_network.json");
+  } else if (name === "PeopleVessel") {
+    drawGraph("#svg2", "people_vessel_network.json");
+  } else if (name === "Pseudonym") {
+    drawGraph("#svg3", "pseudonym_network.json");
+  } else if (name === "Nadia") {
+    // Nadia’s network — triggers animation again
+    drawGraph("#svg4", "nadia_network.json", "Nadia Conti");
+  }
 }
 
 // Default tab
@@ -48,7 +59,7 @@ function drawGraph(svgSelector, jsonPath, highlight = null) {
     height = +svg.attr("height");
   svg.selectAll("*").remove();
 
-  const g = svg.append("g");
+  const g = svg.append("g"); // for zoom/pan
 
   const zoom = d3
     .zoom()
@@ -61,7 +72,11 @@ function drawGraph(svgSelector, jsonPath, highlight = null) {
       if (!n.type && /^Hour /.test(n.id)) n.type = "Hour";
     });
 
+    // --- pseudonym color logic ---
+    const isPseudonym = svgSelector === "#svg3";
+
     const color = (d) => {
+      if (isPseudonym) return "#7eb0d5"; 
       if (highlight && d.id === highlight) return "#ff595e";
       if (d.type === "Person") return "#7eb0d5";
       if (d.type === "Vessel") return "#90d595";
@@ -71,13 +86,24 @@ function drawGraph(svgSelector, jsonPath, highlight = null) {
       return "#b0b0b0";
     };
 
-    const link = g
-      .append("g")
-      .attr("stroke", "#aaa")
-      .selectAll("line")
-      .data(data.links)
-      .join("line")
-      .attr("stroke-width", (d) => (d.value ? Math.max(1, d.value * 6) : 1));
+    const sim = d3
+      .forceSimulation()
+      .force("link", d3.forceLink().id((d) => d.id).distance(120))
+      .force("charge", d3.forceManyBody().strength(-260))
+      .force("center", d3.forceCenter(width / 2, height / 2));
+
+const isPeopleVessel = svgSelector === "#svg2"; // 👈 detect which graph
+const linkOpacity = isPeopleVessel ? 0.15 : 0.5; // lower opacity for People–Vessel
+
+const link = g
+  .append("g")
+  .attr("stroke", "#aaa")
+  .attr("stroke-opacity", linkOpacity) // 👈 add opacity here
+  .selectAll("line")
+  .data(data.links)
+  .join("line")
+  .attr("stroke-width", (d) => (d.value ? Math.max(1, d.value * 6) : 1));
+
 
     const node = g
       .append("g")
@@ -86,7 +112,7 @@ function drawGraph(svgSelector, jsonPath, highlight = null) {
       .join("circle")
       .attr("r", 6.5)
       .attr("fill", color)
-      .call(drag(simulation()));
+      .call(drag(sim));
 
     const label = g
       .append("g")
@@ -98,17 +124,8 @@ function drawGraph(svgSelector, jsonPath, highlight = null) {
       .attr("dx", 10)
       .attr("dy", ".35em");
 
-    const sim = simulation();
     sim.nodes(data.nodes).on("tick", ticked);
     sim.force("link").links(data.links);
-
-    function simulation() {
-      return d3
-        .forceSimulation()
-        .force("link", d3.forceLink().id((d) => d.id).distance(120))
-        .force("charge", d3.forceManyBody().strength(-260))
-        .force("center", d3.forceCenter(width / 2, height / 2));
-    }
 
     function ticked() {
       link
