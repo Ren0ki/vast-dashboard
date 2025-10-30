@@ -1,79 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>🌊 Oceanus Visual Analytics Dashboard</title>
+<meta charset="utf-8" />
+<title>Oceanus Visual Analytics Dashboard</title>
 
-  <!-- D3 + Scripts -->
-  <script src="https://d3js.org/d3.v7.min.js"></script>
-  <script src="script.js" defer></script>
-  <script src="nadia.js" defer></script>
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="style.css">
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="script.js" defer></script>
+<script src="nadia.js" defer></script>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <h2>🌊 Oceanus Visual Analytics Dashboard</h2>
+<h2>🌊 Oceanus Visual Analytics Dashboard</h2>
 
-  <!-- Tab Buttons -->
-  <div class="wrap">
-    <div class="tab">
-      <button class="tablinks" onclick="openTab(event, 'Temporal')" id="defaultOpen">Temporal Patterns</button>
-      <button class="tablinks" onclick="openTab(event, 'PeopleVessel')">People–Vessel Network</button>
-      <button class="tablinks" onclick="openTab(event, 'Pseudonym')">Pseudonym Network</button>
-      <button class="tablinks" onclick="openTab(event, 'Nadia')">Nadia Conti's Network</button>
-    </div>
+<div class="wrap">
+  <div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'Temporal')" id="defaultOpen">Temporal Patterns</button>
+    <button class="tablinks" onclick="openTab(event, 'PeopleVessel')">People–Vessel Network</button>
+    <button class="tablinks" onclick="openTab(event, 'Pseudonym')">Pseudonym Network</button>
+    <button class="tablinks" onclick="openTab(event, 'Nadia')">Nadia Conti's Network</button>
   </div>
+</div>
 
-  <!-- Legend -->
-  <div class="legend">
-    <span style="background:#7eb0d5">Person</span>
-    <span style="background:#90d595">Vessel</span>
-    <span style="background:#fdb462">Organization/Group</span>
-    <span style="background:#e78ac3">Location</span>
-    <span style="background:#b0b0b0">Event/Other</span>
-    <span style="background:#ff595e">Person of Interest</span>
-  </div>
+<div class="legend">
+  <span style="background:#7eb0d5">Person</span>
+  <span style="background:#90d595">Vessel</span>
+  <span style="background:#fdb462">Organization/Group</span>
+  <span style="background:#e78ac3">Location</span>
+  <span style="background:#b0b0b0">Event/Other</span>
+  <span style="background:#ff595e">Person of Interest</span>
+</div>
 
-  <!-- 1️⃣ Temporal Patterns Tab -->
-  <div id="Temporal" class="tabcontent">
-    <h3>Weekly Communication Trends</h3>
-    <svg id="temporalLine" width="900" height="300"></svg>
-    <h3>Temporal Interaction Network</h3>
-    <svg id="svg1" width="1000" height="650"></svg>
-  </div>
+<div id="Temporal" class="tabcontent">
+  <svg id="svg1" width="1000" height="650"></svg>
+</div>
 
-  <!-- 2️⃣ People–Vessel Network Tab -->
-  <div id="PeopleVessel" class="tabcontent">
-    <h3>Community Network Selector</h3>
-    <select id="communitySelect">
-      <option value="all">All Communities</option>
-      <option value="1">Community 1</option>
-      <option value="2">Community 2</option>
-      <option value="3">Community 3</option>
-      <option value="4">Community 4</option>
-      <option value="5">Community 5</option>
-      <option value="6">Community 6</option>
-    </select>
-    <svg id="svg2" width="1000" height="650"></svg>
-  </div>
+<div id="PeopleVessel" class="tabcontent">
+  <svg id="svg2" width="1000" height="650"></svg>
+</div>
 
-  <!-- 3️⃣ Pseudonym Network Tab -->
-  <div id="Pseudonym" class="tabcontent pseudonym-style">
-    <div style="display:flex; justify-content:center; align-items:flex-start; gap:20px; background:white; padding:20px; border:1px solid #ccc; width:1000px; margin:auto;">
-      <div>
-        <h3>Pseudonym Network</h3>
-        <svg id="svg3" width="500" height="500" style="border:1px solid #ccc;"></svg>
-      </div>
-      <div>
-        <h3>Alias Similarity Heatmap</h3>
-        <svg id="heatmap" width="500" height="500" style="border:1px solid #ccc;"></svg>
-      </div>
-    </div>
-    <div style="margin-top:20px; text-align:center;">
-      <h3>🔍 Pseudonym Similarity Table</h3>
-      <table id="pseudonymTable" style="width:70%; margin:auto; border-collapse:collapse; background:white;">
+<div id="Pseudonym" class="tabcontent">
+ <div style="display:flex; justify-content:center; align-items:flex-start; gap:20px; background:white; padding:20px; border:1px solid #ccc; width:1000px; margin:auto;">
+    <svg id="svg3" width="600" height="650" style="border:1px solid #ccc;"></svg>
+    <div style="flex:1; overflow-y:auto; max-height:650px;">
+      <h3 style="margin-top:0;">🔍 Pseudonym Similarity Table</h3>
+      <table id="pseudonymTable" style="width:100%; border-collapse: collapse; background: white;">
         <thead>
           <tr style="background:#ccc;">
             <th style="padding:8px 16px; border:1px solid #999;">Given Name</th>
@@ -85,22 +56,20 @@
       </table>
     </div>
   </div>
+</div>
 
-  <!-- 4️⃣ Nadia Conti’s Network Tab -->
-  <div id="Nadia" class="tabcontent">
-    <div style="text-align:center; margin-bottom:10px;">
-      <label for="nadiaMode"><b>View Mode:</b></label>
-      <select id="nadiaMode" style="padding:6px 10px; border-radius:6px;">
-        <option value="default">Default</option>
-        <option value="illicit">Illicit Activity Coloring</option>
-      </select>
-    </div>
-    <svg id="svg4" width="1000" height="650"></svg>
+<div id="Nadia" class="tabcontent">
+  <div style="text-align:center; margin-bottom:10px;">
+    <label for="nadiaMode"><b>View Mode:</b></label>
+    <select id="nadiaMode" style="padding:6px 10px; border-radius:6px;">
+      <option value="default">Default</option>
+      <option value="illicit">Illicit Activity Coloring</option>
+    </select>
   </div>
+  <svg id="svg4" width="1000" height="650"></svg>
+</div>
 
-  <div class="footer">
-    Drag nodes to explore; labels resize automatically for events.
-  </div>
+<div class="footer">Drag nodes to explore; labels resize automatically for events.</div>
 
 </body>
 </html>
