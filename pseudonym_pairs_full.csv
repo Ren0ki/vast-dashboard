@@ -1,0 +1,22 @@
+Given Name,Pseudonym,Similarity
+Sam,Kelly,0.33
+The Intern,Mrs. Money,0.25
+Clepper Jensen,Miranda Jordan,0.12
+The Middleman,Boss,0.12
+Sam,Elise,0.1
+The Accountant,The Middleman,0.1
+The Intern,The Lookout,0.09
+Nadia Conti,Elise,0.08
+Nadia Conti,The Accountant,0.08
+Davis,Rodriguez,0.07
+Sam,Nadia Conti,0.07
+Nadia Conti,Davis,0.07
+The Accountant,Boss,0.06
+Mrs. Money,The Middleman,0.06
+Boss,Small Fry,0.05
+Rodriguez,Boss,0.05
+Davis,Sailor Shift,0.05
+Nadia Conti,Liam Thorne,0.04
+Mrs. Money,Boss,0.04
+Davis,Boss,0.03
+Davis,Small Fry,0.03
