@@ -169,105 +169,111 @@ function drawGraph(svgSelector, jsonPath, highlight = null) {
         });
     }
  // --- Static Community Dropdown for People–Vessel Network ---
-const communityLabels = {
-  1: "Tourism / Filming",
-  2: "Logistics / Enforcement",
-  3: "Environmentalism / Activism",
-  4: "Commercial / Shipping",
-  5: "Civic / Infrastructure",
-  6: "Other / Miscellaneous"
-};
+if (!window.communityDropdownInitialized) {
+  window.communityDropdownInitialized = true; // 
 
-// Pre-fill dropdown
-const select = d3.select("#communitySelect");
-Object.entries(communityLabels).forEach(([id, label]) => {
-  select.append("option").attr("value", id).text(label);
-});
+  const communityLabels = {
+    1: "Tourism / Filming",
+    2: "Logistics / Enforcement",
+    3: "Environmentalism / Activism",
+    4: "Commercial / Shipping",
+    5: "Civic / Infrastructure",
+    6: "Other / Miscellaneous"
+  };
 
-// When dropdown changes, recolor nodes instead of removing them
-select.on("change", function() {
-  const val = this.value;
+  // Clear any existing options before adding
+  const select = d3.select("#communitySelect");
+  select.selectAll("option:not([value='all'])").remove();
 
-  d3.json("people_vessel_network.json").then(data => {
-    // Reset the graph area
-    d3.select("#svg2").selectAll("*").remove();
-
-    // Draw full graph first
-    const svg = d3.select("#svg2");
-    const w = +svg.attr("width"),
-          h = +svg.attr("height");
-
-    const colorScale = d3.scaleOrdinal()
-      .domain(Object.keys(communityLabels))
-      .range(["#7eb0d5", "#90d595", "#fdb462", "#e78ac3", "#b3de69", "#fb8072"]);
-
-    const sim = d3.forceSimulation(data.nodes)
-      .force("link", d3.forceLink(data.links).id(d => d.id).distance(120))
-      .force("charge", d3.forceManyBody().strength(-250))
-      .force("center", d3.forceCenter(w / 2, h / 2));
-
-    const link = svg.append("g")
-      .selectAll("line")
-      .data(data.links)
-      .join("line")
-      .attr("stroke", "#aaa")
-      .attr("stroke-opacity", 0.5);
-
-    const node = svg.append("g")
-      .selectAll("circle")
-      .data(data.nodes)
-      .join("circle")
-      .attr("r", 6)
-      .attr("fill", d => colorScale(Math.floor(Math.random() * 6) + 1))
-      .call(d3.drag()
-        .on("start", dragstarted)
-        .on("drag", dragged)
-        .on("end", dragended));
-
-    const label = svg.append("g")
-      .selectAll("text")
-      .data(data.nodes)
-      .join("text")
-      .text(d => d.id)
-      .attr("font-size", 9)
-      .attr("dx", 10)
-      .attr("dy", ".35em");
-
-    sim.on("tick", () => {
-      link
-        .attr("x1", d => d.source.x)
-        .attr("y1", d => d.source.y)
-        .attr("x2", d => d.target.x)
-        .attr("y2", d => d.target.y);
-      node.attr("cx", d => d.x).attr("cy", d => d.y);
-      label.attr("x", d => d.x).attr("y", d => d.y);
-    });
-
-    // Simple drag handlers
-    function dragstarted(event, d) {
-      if (!event.active) sim.alphaTarget(0.3).restart();
-      d.fx = d.x; d.fy = d.y;
-    }
-    function dragged(event, d) {
-      d.fx = event.x; d.fy = event.y;
-    }
-    function dragended(event, d) {
-      if (!event.active) sim.alphaTarget(0);
-      d.fx = null; d.fy = null;
-    }
-
-    // Highlight if specific community chosen
-    if (val !== "all") {
-      node.transition().duration(500)
-        .attr("fill", (d, i) => i % 6 + 1 === +val ? colorScale(val) : "#ccc")
-        .attr("opacity", (d, i) => i % 6 + 1 === +val ? 1 : 0.3);
-      label.transition().duration(500)
-        .attr("opacity", (d, i) => i % 6 + 1 === +val ? 1 : 0.1);
-      link.transition().duration(500)
-        .attr("stroke-opacity", (d, i) => i % 6 + 1 === +val ? 0.6 : 0.1);
-    }
+  Object.entries(communityLabels).forEach(([id, label]) => {
+    select.append("option")
+      .attr("value", id)
+      .text(label);
   });
-});
+
+  // Handle dropdown change
+  select.on("change", function() {
+    const val = this.value;
+
+    d3.json("people_vessel_network.json").then(data => {
+      d3.select("#svg2").selectAll("*").remove();
+
+      const svg = d3.select("#svg2"),
+            w = +svg.attr("width"),
+            h = +svg.attr("height");
+
+      const colorScale = d3.scaleOrdinal()
+        .domain(Object.keys(communityLabels))
+        .range(["#7eb0d5", "#90d595", "#fdb462", "#e78ac3", "#b3de69", "#fb8072"]);
+
+      const sim = d3.forceSimulation(data.nodes)
+        .force("link", d3.forceLink(data.links).id(d => d.id).distance(120))
+        .force("charge", d3.forceManyBody().strength(-250))
+        .force("center", d3.forceCenter(w / 2, h / 2));
+
+      const link = svg.append("g")
+        .selectAll("line")
+        .data(data.links)
+        .join("line")
+        .attr("stroke", "#aaa")
+        .attr("stroke-opacity", 0.5);
+
+      const node = svg.append("g")
+        .selectAll("circle")
+        .data(data.nodes)
+        .join("circle")
+        .attr("r", 6)
+        .attr("fill", (d, i) => colorScale((i % 6) + 1))
+        .call(d3.drag()
+          .on("start", dragstarted)
+          .on("drag", dragged)
+          .on("end", dragended));
+
+      const label = svg.append("g")
+        .selectAll("text")
+        .data(data.nodes)
+        .join("text")
+        .text(d => d.id)
+        .attr("font-size", 9)
+        .attr("dx", 10)
+        .attr("dy", ".35em");
+
+      sim.on("tick", () => {
+        link
+          .attr("x1", d => d.source.x)
+          .attr("y1", d => d.source.y)
+          .attr("x2", d => d.target.x)
+          .attr("y2", d => d.target.y);
+        node.attr("cx", d => d.x).attr("cy", d => d.y);
+        label.attr("x", d => d.x).attr("y", d => d.y);
+      });
+
+      function dragstarted(event, d) {
+        if (!event.active) sim.alphaTarget(0.3).restart();
+        d.fx = d.x; d.fy = d.y;
+      }
+      function dragged(event, d) {
+        d.fx = event.x; d.fy = event.y;
+      }
+      function dragended(event, d) {
+        if (!event.active) sim.alphaTarget(0);
+        d.fx = null; d.fy = null;
+      }
+
+      // Highlight selected
+      if (val !== "all") {
+        node.transition().duration(500)
+          .attr("fill", (d, i) => ((i % 6) + 1) === +val ? colorScale(val) : "#ccc")
+          .attr("opacity", (d, i) => ((i % 6) + 1) === +val ? 1 : 0.3);
+        label.transition().duration(500)
+          .attr("opacity", (d, i) => ((i % 6) + 1) === +val ? 1 : 0.1);
+        link.transition().duration(500)
+          .attr("stroke-opacity", (d, i) => ((i % 6) + 1) === +val ? 0.6 : 0.1);
+      }
+    });
+  });
+}
+
 
 
 
